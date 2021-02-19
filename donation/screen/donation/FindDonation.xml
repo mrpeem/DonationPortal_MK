@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
+    
+    <transition name="createDonation">
+        <service-call name="donation.DonationServices.create#DonationGroovy"/>
+        <default-response url="."/>
+    </transition>
+       
+
+    <actions>
+        <entity-find entity-name="donation.Donation" list="donationList">
+            <search-form-inputs/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+
+        <container-dialog id="CreateDonationDialog" button-text="Make a Donation">
+            <form-single name="CreateDonation" transition="createDonation">
+                <auto-fields-entity entity-name="donation.Donation" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+
+
+
+
+        <form-list name="ListDonations" list="donationList" header-dialog="true" skip-form="true">
+            <form-list name="ListDonations" list="donationList" header-dialog="true" skip-form="true">
+                <auto-fields-entity entity-name="donation.Donation" field-type="find-display"/>
+                <field name="description">
+                    <header-field show-order-by="true"><text-find hide-options="true"/></header-field>
+                    <default-field><display/></default-field>
+                </field>
+            </form-list>
+        </form-list>
+
+
+    </widgets>
+</screen>

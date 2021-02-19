@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+    <entity entity-name="Donation" package="donation">
+        <field name="donationId" type="id" is-pk="true"/>
+        <field name="name" type="text-medium"/>
+        <field name="email" type="text-medium"/>
+        <field name="phone" type="text-medium"/>
+        <field name="donation_amount" type="text-medium"/>
+        <field name="credit_card" type="text-medium"/>
+    </entity>
+</entities>

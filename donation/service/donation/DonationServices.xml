@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <service verb="create" noun="DonationGroovy" type="script"
+        location="component://donation/service/donation/createDonation.groovy">
+        <in-parameters>
+            <auto-parameters entity-name="donation.Donation" include="all"/>
+        </in-parameters>
+        <out-parameters>
+            <auto-parameters entity-name="donation.Donation" include="pk" required="true"/>
+        </out-parameters>
+    </service>
+
+</services>
